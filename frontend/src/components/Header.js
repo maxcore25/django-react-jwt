@@ -8,7 +8,6 @@ export default function Header() {
     <header className='topmenu'>
       <Link to='/'>Home</Link>
       <Link to='/login'>Login</Link>
-      <div>Hello {name}</div>
     </header>
   );
 }
