@@ -1,0 +1,6 @@
+.topmenu {
+  display: flex;
+  justify-content: space-evenly;
+  background: #ddd;
+  padding: 1rem;
+}
