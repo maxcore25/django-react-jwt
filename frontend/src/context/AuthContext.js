@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   let loginUser = async e => {
     e.preventDefault();
+
     let response = await fetch('http://127.0.0.1:8000/api/token/', {
       method: 'POST',
       headers: {
@@ -20,9 +21,15 @@ export const AuthProvider = ({ children }) => {
         password: e.target.password.value,
       }),
     });
+
     let data = await response.json();
-    console.log('data:', data);
-    console.log('response:', response);
+
+    if (response.status === 200) {
+      setAuthTokens(data);
+      setUser(data.access);
+    } else {
+      alert('Something went wrong');
+    }
   };
 
   let contextData = { loginUser: loginUser };
