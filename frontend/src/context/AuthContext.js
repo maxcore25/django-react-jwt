@@ -6,6 +6,8 @@ const AuthContext = createContext();
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
+  //   localStorage.getItem('authTokens');
+
   const [user, setUser] = useState(null);
   const [authTokens, setAuthTokens] = useState(null);
 
