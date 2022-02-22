@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className='topmenu'>
       <Link to='/'>Home</Link>
-      {user ? <p>Logout</p> : <Link to='/login'>Login</Link>}
+      {user ? <Link to='/logout'>Logout</Link> : <Link to='/login'>Login</Link>}
 
       {user && <p>Hello {user.username}</p>}
     </header>
