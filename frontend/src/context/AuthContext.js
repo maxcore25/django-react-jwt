@@ -45,7 +45,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  let contextData = { user: user, loginUser: loginUser };
+  let logoutUser = () => {
+    setAuthTokens(null);
+    setUser(null);
+    localStorage.removeItem('authTokens');
+    history('/login');
+  };
+
+  let contextData = {
+    user: user,
+    loginUser: loginUser,
+    logoutUser: logoutUser,
+  };
 
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
