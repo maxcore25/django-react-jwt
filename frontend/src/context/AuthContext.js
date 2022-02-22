@@ -73,9 +73,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    const fixedInterval = 1000 * 60 * 4;
     let interval = setInterval(() => {
       authTokens && updateToken();
-    }, 2000);
+    }, fixedInterval);
     return () => clearInterval(interval);
   }, [authTokens, loading]);
 
